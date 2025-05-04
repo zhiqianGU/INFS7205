@@ -70,6 +70,7 @@ Dev Tools: IntelliJ IDEA 2024, pgAdmin
    http://localhost:63342/Practice_2/static/index.html
 
 
+
 explanation of three query:
 
 Each query uses the geom GIST index for spatial filtering and ordering:
@@ -93,6 +94,7 @@ Purpose: Find stores within a corridor along a path and order them by position a
 
 💻 Usage
 Open the application in your browser at http://localhost:63342/Practice_2/static/index.html
+
 Nearest Mode:
 Enter lat, lng, k → Search Nearest → map plots location + k nearest store markers.
 
