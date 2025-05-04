@@ -32,6 +32,7 @@ Dev Tools: IntelliJ IDEA 2024, pgAdmin
 
 🚀 Installation Guide
 1. Database Setup
+   
    CREATE DATABASE Practice_2;
    \c Practice_2
    CREATE EXTENSION postgis;
@@ -48,12 +49,14 @@ Dev Tools: IntelliJ IDEA 2024, pgAdmin
    SET geom = ST_SetSRID(ST_MakePoint(longitude,latitude),4326)::geography
    WHERE geom IS NULL;
     CREATE INDEX idx_chipotle_geom ON chipotle USING GIST(geom);
+   
     in command:
    \copy chipotle(state,location,address,latitude,longitude)
    FROM '/path/to/chipotle_stores.csv'
    WITH (FORMAT csv, HEADER true);
 
-2. Backend (Spring Boot)
+3. Backend (Spring Boot)
+   
    Configure src/main/resources/application.properties:
    spring.datasource.url=jdbc:postgresql://localhost:5432/chipotle_db
    spring.datasource.username=your_user
@@ -65,7 +68,7 @@ Dev Tools: IntelliJ IDEA 2024, pgAdmin
    mvn clean spring-boot:run
    Backend listens on http://localhost:8080.
 
-3. Frontend
+5. Frontend
    Access via browser:
    http://localhost:63342/Practice_2/static/index.html
 
