@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Find Chipotle</title>
+
+    <!-- Leaflet 样式 -->
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet/dist/leaflet.css"
+    />
+
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<!-- 左侧表单 -->
+<div class="sidebar">
+    <button id="toggleModeBtn">Switch to Rectangle Search</button>
+    <h2 id="title">
+        <img src="images/Chipotle-Logo.png" alt="Chipotle" class="logo-icon" />
+        Find Chipotle By Nearest
+    </h2>
+<div id="modeNearest">
+    <div class="form-group">
+        <label for="lat">Latitude</label>
+        <input type="number" id="lat" placeholder="0" step="any" />
+    </div>
+    <div class="form-group">
+        <label for="lng">Longitude</label>
+        <input type="number" id="lng" placeholder="0" step="any" />
+    </div>
+    <div class="form-group">
+        <label for="k">Number of Restaurants (K)</label>
+        <input type="number" id="k" value="0" min="1" max="50" />
+    </div>
+    <button id="searchBtn1">🔍 Search Nearest</button>
+</div>
+
+<!-- 模式 B：矩形框选 -->
+<div id="modeRectangle" style="display:none;">
+    <div class="form-group">
+        <label for="minLat">Min Latitude</label>
+        <input type="number" id="minLat" placeholder="0" step="any" />
+    </div>
+    <div class="form-group">
+        <label for="minLng">Min Longitude</label>
+        <input type="number" id="minLng" placeholder="0" step="any" />
+    </div>
+    <div class="form-group">
+        <label for="maxLat">Max Latitude</label>
+        <input type="number" id="maxLat" placeholder="0" step="any" />
+    </div>
+    <div class="form-group">
+        <label for="maxLng">Max Longitude</label>
+        <input type="number" id="maxLng" placeholder="0" step="any" />
+    </div>
+    <button id="searchBtn2">🔍 Search Rectangle</button>
+</div>
+
+
+<div id="modeCorridor" style="display:none;">
+    <div class="form-group">
+        <label for="Lat1">Start Latitude</label>
+        <input type="number" id="Lat1" placeholder="0" step="any" />
+    </div>
+    <div class="form-group">
+        <label for="Lng1">Start Longitude</label>
+        <input type="number" id="Lng1" placeholder="0" step="any" />
+    </div>
+    <div class="form-group">
+        <label for="Lat2">End Latitude</label>
+        <input type="number" id="Lat2" placeholder="0" step="any" />
+    </div>
+    <div class="form-group">
+        <label for="Lng2">End Longitude</label>
+        <input type="number" id="Lng2" placeholder="0" step="any" />
+    </div>
+    <div class="form-group">
+        <label for="radius">radius</label>
+        <input type="number" id="radius" placeholder="0" step="any" />
+    </div>
+    <button id="searchBtn3">🔍 Search Corridor</button>
+</div>
+</div>
+
+<!-- 地图容器 -->
+<div id="map"></div>
+
+<!-- Leaflet 脚本 -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<!-- 自定义脚本 -->
+<script src="js/script.js"></script>
+</body>
+</html>
