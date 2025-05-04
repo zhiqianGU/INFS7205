@@ -112,6 +112,7 @@ Enter lat1, lng1, lat2, lng2, radius → Search Corridor → map plots line, buf
 | `/storeInquiryByRectangle` | POST   | `minLat`, `minLng`, `maxLat`, `maxLng`   | Rectangle bounding-box search               |
 | `/storeInquiryByCorridor`  | POST   | `Lat1`, `Lng1`, `Lat2`, `Lng2`, `radius` | Corridor search                             |
 | `/corridorGeo`             | GET    | `Lat1`, `Lng1`, `Lat2`, `Lng2`, `radius` | Returns corridor polygon as GeoJSON for map |
+
 Each endpoint example returns:
 {
 "status": 200,
